@@ -5,8 +5,14 @@ public class Switch {
      */
     boolean onOff;
 
-    turnOn();
+    public boolean turnOn() {
+        onOff = true;
+        return onOff;
+    }
 
-    turnOff();
+    public boolean turnOff() {
+        onOff = false;
+        return onOff;
+    }
 
 }

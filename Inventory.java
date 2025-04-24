@@ -1,13 +1,21 @@
+import java.util.ArrayList;
+
 public class Inventory {
     /**
      * Attributes
      */
 
-     ArrayList<Item> item;
+    ArrayList<Item> items;
 
+    public void addItem(Item i) {
+        items.add(i);
+    }
 
-     addItem();
-
-     exist(); // check whether something exists, thus can be used 
+    public boolean exist(Item i) {
+        if (items.contains(i)) {
+            return true;
+        }
+        return false;
+    } // check whether something exists, thus can be used 
 
 }

@@ -1,0 +1,15 @@
+public class Door extends Containment {
+
+    /*
+     * Attributes
+     */
+    Integar password;
+
+    public void open() {
+        if (password == 835) {
+            lock = false;
+            openClose = true;
+            return openClose;
+        }
+    }
+}

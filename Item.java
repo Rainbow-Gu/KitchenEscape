@@ -1,13 +1,24 @@
+import java.util.ArrayList;
+
 public class Item {
 
     /**
      * Attributes
      */
-     boolean isTaken;
+    boolean isTaken;
+    public ArrayList<Item> items;
 
+    public void take(Item i) {
+        if (isTaken == false) {
+            items.remove(i);
+        }
+        isTaken = true;
+    }
 
-     take();
-
-     put()
-
+    public void put(Item i) {
+        if (isTaken == true) {
+            items.add(i);
+        }
+        isTaken = false;
+    }
 }
