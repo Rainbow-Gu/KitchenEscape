@@ -11,8 +11,9 @@ public class Containment {
     ArrayList<Item> items;
 
     public boolean open() {
-        openClose = true;
-        return openClose;
+        if (lock == false && openClose == false) {
+            openClose = true;
+        } return openClose;
     }
 
     public boolean close() {

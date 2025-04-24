@@ -3,13 +3,14 @@ public class Door extends Containment {
     /*
      * Attributes
      */
-    Integar password;
+    int password;
 
-    public void open() {
+    public boolean open() {
         if (password == 835) {
             lock = false;
             openClose = true;
             return openClose;
         }
+        return false;
     }
 }
