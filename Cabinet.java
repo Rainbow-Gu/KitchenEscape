@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+
+public class Cabinet extends Containment {
+
+    //Constructor
+    public Cabinet () {
+        super(new Bowl(),new Pan());
+        items.add(new Bowl());
+        items.add(new Pan());
+    }
+
+    public boolean open () {
+        if (Inventory.exist(Key)) {
+            openClose = true;
+            System.out.println("The door of the cabinet is open.");
+            return openClose;
+        }
+    }
+
+}

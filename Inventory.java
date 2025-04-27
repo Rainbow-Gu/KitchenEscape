@@ -5,9 +5,9 @@ public class Inventory {
      * Attributes
      */
 
-    ArrayList<Item> items;
+    static ArrayList<Item> items;
 
-    public void addItem(Item i) {
+    public static void addItem(Item i) {
         items.add(i);
     }
 

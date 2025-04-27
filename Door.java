@@ -1,16 +1,18 @@
-public class Door extends Containment {
+public class Door {
 
     /*
      * Attributes
      */
     int password;
 
-    public boolean open() {
+    public boolean open(int password) {
         if (password == 835) {
-            lock = false;
-            openClose = true;
-            return openClose;
+            System.out.println("Hooray! You have successfully complete the game!");
+            return true;
+        } else {
+            System.out.println("No! The password is incorrect.");
+            return false;
         }
-        return false;
+        
     }
 }

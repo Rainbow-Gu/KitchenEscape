@@ -7,13 +7,26 @@ public class Containment {
      */
 
     boolean openClose; //true if it is open
-    boolean lock; // whether the item is locked, if doesn't have a lock, set this never is false
     ArrayList<Item> items;
 
+    //Constructor
+    public Containment (Item i1, Item i2) {
+        this.items = new ArrayList<Item> ();
+        items.add(i1);
+        items.add(i2);
+    }
+
     public boolean open() {
-        if (lock == false && openClose == false) {
+        if (openClose == false) {
             openClose = true;
         } return openClose;
+    }
+
+    public void take (Item i) {
+        if (openClose == true) {
+            Inventory.addItem(i);
+            items.remove(i);
+        }
     }
 
     public boolean close() {
