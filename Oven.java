@@ -22,7 +22,7 @@ public class Oven extends Switch {
     }
 
     public boolean checkPan () {
-        if (items.contain(Pan)) {
+        if (items.contain(Pot)) {
             return true;
         }
         return false;

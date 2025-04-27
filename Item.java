@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public class Item {
 
@@ -6,19 +5,11 @@ public class Item {
      * Attributes
      */
     boolean isTaken;
-    public ArrayList<Item> items;
 
-    public void take(Item i) {
-        if (isTaken == false) {
-            items.remove(i);
-        }
-        isTaken = true;
+    // Constructor
+    public Item(){
     }
 
-    public void put(Item i) {
-        if (isTaken == true) {
-            items.add(i);
-        }
-        isTaken = false;
-    }
+
+
 }

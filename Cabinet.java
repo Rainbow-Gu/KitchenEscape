@@ -4,9 +4,9 @@ public class Cabinet extends Containment {
 
     //Constructor
     public Cabinet () {
-        super(new Bowl(),new Pan());
+        super(new Bowl(),new Pot());
         items.add(new Bowl());
-        items.add(new Pan());
+        items.add(new Pot());
     }
 
     public boolean open () {
