@@ -10,8 +10,8 @@ public class Noodle extends Item {
     // QUESTION - make it a string? these can also happen in game
     public boolean eatCondition() {
 
-        if (collection.contains("bowl")) {
-            if (cooked && collection.exist("fork")) {
+        if (Inventory.collection.contains("bowl")) {
+            if (cooked && Inventory.collection.contains("fork")) {
                 this.cooked = true;
                 return true; 
             } return false; 
@@ -20,7 +20,7 @@ public class Noodle extends Item {
 
     public void eat() {
         if(eatCondition()){
-            collection.removeItem(this);
+            Inventory.removeItem(this);
         } else {
             System.out.println("Noodle not ready.");
         }

@@ -10,10 +10,12 @@ public class Cabinet extends Containment {
     }
 
     public boolean open () {
-        if (collection.contains("key")) {
+        if (Inventory.collection.contains("key")) {
             openClose = true;
             System.out.println("The door of the cabinet is open.");
             return openClose;
+        } else {
+            return false;
         }
     }
 

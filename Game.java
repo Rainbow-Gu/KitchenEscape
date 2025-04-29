@@ -33,7 +33,7 @@ public class Game {
 
     public void fillPot(){
         if (faucet.getName().equalsIgnoreCase("faucet")) {
-            if(Inventory.exist(pot)) {
+            if(Inventory.collection.contains(pot)) {
               pot.fillWater();
             }
         } else {
