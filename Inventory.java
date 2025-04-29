@@ -7,6 +7,9 @@ public class Inventory {
 
     public static ArrayList<Item> collection;
 
+    public Inventory() {
+    }
+
     public static void addItem(Item i) {
         collection.add(i);
     }

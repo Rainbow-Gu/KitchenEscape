@@ -1,10 +1,18 @@
 public class Noodle extends Item {
     
-    private boolean cooked;
+    static boolean cooked;
 
-    public Noodle(String name){
-        super(name);
-        this.cooked = false;
+    public Noodle(){
+        super("noodle");
+        cooked = false;
+    }
+
+    public static boolean isCooked() {
+        return cooked;
+    }
+
+    public static void setCooked() {
+        cooked = true;
     }
 
     // QUESTION - make it a string? these can also happen in game
@@ -12,7 +20,7 @@ public class Noodle extends Item {
 
         if (Inventory.collection.contains("bowl")) {
             if (cooked && Inventory.collection.contains("fork")) {
-                this.cooked = true;
+                cooked = true;
                 return true; 
             } return false; 
         } return false; 

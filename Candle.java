@@ -1,11 +1,11 @@
 public class Candle extends Switch {
     
-    public Candle (String name) {
-        super(name);
+    public Candle () {
+        super("candle");
     }
 
-    public boolean light () {
-        if (stove.turnOff() == true) {
+    public static boolean light () {
+        if (Stove.turnOn()) {
             return true;
         } return false;
     }

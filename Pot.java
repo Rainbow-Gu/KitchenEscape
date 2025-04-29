@@ -1,16 +1,16 @@
 public class Pot extends Utility {
 
-    boolean waterFill;
+    static boolean waterFill;
 
-    public Pot(String name){
-        super(name);
+    public Pot(){
+        super("pot");
     }
 
     public void fillWater() {
-        this.waterFill = true;
+        waterFill = true;
     }
 
-    public boolean isFilled() {
+    public static boolean isFilled() {
         return waterFill;
     }
     

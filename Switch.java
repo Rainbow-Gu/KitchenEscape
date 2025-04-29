@@ -3,7 +3,7 @@ public class Switch {
     /**
      * Attributes
      */
-    boolean onOff;
+    static boolean onOff;
     String name;
 
     public Switch (String name) {
@@ -13,12 +13,12 @@ public class Switch {
     public String getName() {
         return name;
     }
-    public boolean turnOn() {
+    public static boolean turnOn() {
         onOff = true;
         return onOff;
     }
 
-    public boolean turnOff() {
+    public static boolean turnOff() {
         onOff = false;
         return onOff;
     }

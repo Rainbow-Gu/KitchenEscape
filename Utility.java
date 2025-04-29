@@ -6,12 +6,11 @@ public class Utility extends Item {
      * Attributes
      */
 
-    ArrayList<Item> containItems;
+    static ArrayList<Item> containItems;
 
     // Constructor
     public Utility(String name) {
         super(name);
-        this.containItems = new ArrayList<Item>();
     }
 
     // put food in utility
