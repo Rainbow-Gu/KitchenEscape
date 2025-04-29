@@ -11,11 +11,29 @@ public class Inventory {
         items.add(i);
     }
 
-    public boolean exist(Item i) {
-        if (items.contains(i)) {
-            return true;
+    public static void removeItem(Item i) {
+        items.remove(i);
+    }
+
+    public static boolean exist(Item i) {
+        // I want to check an item
+        for (Item item : items) {
+            if (item.getName().equalsIgnoreCase(i)) {
+                return true;
+            }
         }
         return false;
-    } // check whether something exists, thus can be used 
+    } 
+    
+    public void printInventory() {
+        if (items.isEmpty()){
+            System.out.println("You have nothing in your bag...");
+        } else {
+            System.out.println("Bag Inventory: \n");
+            for (Item i :items) {
+                System.out.println("- " + i.getName());
+            }
+        }
+    }
 
 }

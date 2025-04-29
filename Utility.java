@@ -9,7 +9,8 @@ public class Utility extends Item {
     ArrayList<Item> containItems;
 
     // Constructor
-    public Utility() {
+    public Utility(String name) {
+        super(name);
         this.containItems = new ArrayList<Item>();
     }
 
