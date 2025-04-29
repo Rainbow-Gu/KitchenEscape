@@ -4,8 +4,12 @@ public class Stove extends Switch {
 
     ArrayList<Item> items;
 
+    public Stove (String name) {
+        super(name);
+    }
+
     public boolean checkPot () {
-        if (items.contain(Pot)) {
+        if (collection.contain("pot")) {
             return true;
         }
         return false;

@@ -5,25 +5,15 @@ public class Inventory {
      * Attributes
      */
 
-    static ArrayList<Item> items;
+    ArrayList<Item> items;
 
-    public static void addItem(Item i) {
+    public void addItem(Item i) {
         items.add(i);
     }
 
-    public static void removeItem(Item i) {
+    public void removeItem(Item i) {
         items.remove(i);
     }
-
-    public static boolean exist(Item i) {
-        // I want to check an item
-        for (Item item : items) {
-            if (item.getName().equalsIgnoreCase(i)) {
-                return true;
-            }
-        }
-        return false;
-    } 
     
     public void printInventory() {
         if (items.isEmpty()){

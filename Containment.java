@@ -24,7 +24,7 @@ public class Containment {
 
     public void take (Item i) {
         if (openClose == true) {
-            Inventory.addItem(i);
+            collection.addItem(i);
             items.remove(i);
         }
     }

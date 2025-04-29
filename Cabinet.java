@@ -10,7 +10,7 @@ public class Cabinet extends Containment {
     }
 
     public boolean open () {
-        if (Inventory.exist(Key)) {
+        if (Inventory.exist(key)) {
             openClose = true;
             System.out.println("The door of the cabinet is open.");
             return openClose;

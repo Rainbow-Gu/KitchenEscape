@@ -9,6 +9,10 @@ public class Oven extends Switch {
     boolean opened; 
     ArrayList<Item> items;
 
+    public Oven (String name){
+        super(name);
+    }
+
     public void open () {
         opened = true;
     }
@@ -22,13 +26,13 @@ public class Oven extends Switch {
     }
 
     public boolean checkPan () {
-        if (items.contain(Pot)) {
+        if (collection.contains("pot")) {
             return true;
         }
         return false;
     }
 
-    public cook() {
+    public void cook() {
         
     }
 }

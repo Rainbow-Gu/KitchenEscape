@@ -5,6 +5,20 @@ public class Game {
     Switch light = new Switch("light");
     Switch faucet = new Switch("faucet");
     Pot pot = new Pot("pot");
+    Item egg = new Item("egg");
+    Item flour = new Item("flour");
+    Item fork = new Item("fork");
+    Item key = new Item("key");
+
+    Utility bowl = new Utility("bowl");
+    Utility pan = new Utility("pan");
+    Noodle noodle = new Noodle("noodle");
+    Candle candle = new Candle("candle");
+    Inventory collection = new Inventory();
+    Containment drawer1 = new Containment(fork, null);
+    Containment drawer2 = new Containment(noodle, flour);
+    Containment drawer3 = new Containment(candle, null);
+    Containment fridge = new Containment(egg, null);
 
     public void showNumOnly(){
         if (light.getName().equalsIgnoreCase("light")) {
@@ -28,25 +42,12 @@ public class Game {
     
     public static void main(String[] args) {
 
-        Item egg = new Item("egg");
-        Item flour = new Item("flour");
-        Item fork = new Item("fork");
-        Item key = new Item("key");
-
-        Utility bowl = new Utility("bowl");
-        Pot pot = new Pot("pot");
-        Utility pan = new Utility("pan");
+        
 
         // create cake after checks all procedure
         
 
-        Containment drawer1 = new Containment(knife, fork);
-        Containment drawer2 = new Containment(noodle, flour);
-        Containment drawer3 = new Containment(candle, null);
-        Containment fridge = new Containment(egg, null);
-
-
-
+        
 
         Scanner input = new Scanner(System.in);
         
