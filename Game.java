@@ -19,6 +19,7 @@ public class Game {
     Containment drawer2 = new Containment(noodle, flour);
     Containment drawer3 = new Containment(candle, null);
     Containment fridge = new Containment(egg, null);
+    Cabinet cabinet = new Cabinet(bowl, pot);
 
     public void showNumOnly(){
         if (light.getName().equalsIgnoreCase("light")) {

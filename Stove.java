@@ -9,7 +9,7 @@ public class Stove extends Switch {
     }
 
     public boolean checkPot () {
-        if (collection.contain("pot")) {
+        if (collection.contains("pot")) {
             return true;
         }
         return false;

@@ -5,22 +5,26 @@ public class Inventory {
      * Attributes
      */
 
-    ArrayList<Item> items;
+    public ArrayList<Item> collection;
+
+    public Inventory () {
+        this.collection = new ArrayList<Item> ();
+    }
 
     public void addItem(Item i) {
-        items.add(i);
+        collection.add(i);
     }
 
     public void removeItem(Item i) {
-        items.remove(i);
+        collection.remove(i);
     }
     
     public void printInventory() {
-        if (items.isEmpty()){
+        if (collection.isEmpty()){
             System.out.println("You have nothing in your bag...");
         } else {
             System.out.println("Bag Inventory: \n");
-            for (Item i :items) {
+            for (Item i :collection) {
                 System.out.println("- " + i.getName());
             }
         }
