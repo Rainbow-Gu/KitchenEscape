@@ -1,4 +1,4 @@
-public class Switch {
+public class Switch extends Item{
 
     /**
      * Attributes
@@ -7,7 +7,7 @@ public class Switch {
     String name;
 
     public Switch (String name) {
-        this.name = name;
+        super(name);
     }
 
     public String getName() {

@@ -4,7 +4,6 @@ public class Item {
     /**
      * Attributes
      */
-    boolean isTaken;
     String name;
 
     // Constructor

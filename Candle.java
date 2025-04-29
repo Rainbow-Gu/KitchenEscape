@@ -1,5 +1,6 @@
 public class Candle extends Switch {
     
+
     public Candle () {
         super("candle");
     }

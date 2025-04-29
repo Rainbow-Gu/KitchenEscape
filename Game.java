@@ -13,7 +13,7 @@ public class Game {
     Utility bowl = new Utility("bowl");
     Utility pan = new Utility("pan");
     Noodle noodle = new Noodle();
-    Candle candle = new Candle("candle");
+    Candle candle = new Candle();
     Inventory collection = new Inventory();
     Containment drawer1 = new Containment(fork, null);
     Containment drawer2 = new Containment(noodle, flour);
