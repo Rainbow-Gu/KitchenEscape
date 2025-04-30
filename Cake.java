@@ -15,8 +15,9 @@ public class Cake extends Item {
     public void eat() {
         if(eatCondition()){
             Inventory.removeItem(this);
+            System.out.println(1);
         } else {
-            System.out.println("Cake not ready.");
+            System.out.println("Cake not ready to eat.");
         }
     }
 

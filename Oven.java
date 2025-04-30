@@ -49,7 +49,7 @@ public class Oven extends Switch {
     public void cook() {
         if(this.checkPan()) {
             if (this.checkSwitch()) {
-                System.out.println("Oven is on. Cooking...");
+                System.out.println("Oven is on. Baking...");
                 Cake cake = new Cake();
                 Inventory.collection.add(cake);
                 System.out.println("You made a cake!");

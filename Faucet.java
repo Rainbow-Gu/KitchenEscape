@@ -7,8 +7,7 @@ public class Faucet extends Switch{
     public void fillPot(Pot pot){
         if(Inventory.collection.contains(pot)) {
             pot.fillWater();
-        }
-        else {
+        } else {
             System.out.println("Method inapplicable.");
         }
     }
