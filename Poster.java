@@ -1,7 +1,12 @@
-public class Poster {
+public class Poster extends Item{
     
     //Attributes
     String type; //todo list, cake recipe, or hint for password
+
+    public Poster (String type) {
+        super("poster");
+        this.type = type;
+    }
 
     public void read (String type) {
         if (type == "todoList") {

@@ -9,8 +9,8 @@ public class Oven extends Switch {
     boolean opened; 
     static ArrayList<Item> items;
 
-    public Oven (){
-        super("oven");
+    public Oven (boolean onOff){
+        super("oven", onOff);
     }
 
     public void open () {
@@ -31,13 +31,13 @@ public class Oven extends Switch {
         System.out.println("Oven closed."); // cannot see what's inside
     }
 
-    public void addItem (Item i) {
+    public void addItemOven (Item i) {
         items.add(i);
     }
 
     public boolean checkPan () {
-        if (Inventory.collection.contains(pan)) {
-            if(Utility.containItems.contains(egg) && Utility.containItems.contains("flour")) {
+        if (collection.contains(pan)) {
+            if(Utility.containItems.contains(egg) && Utility.containItems.contains(flour)) {
                 return true;
             } else {
                 return false;
@@ -50,8 +50,7 @@ public class Oven extends Switch {
         if(this.checkPan()) {
             if (this.checkSwitch()) {
                 System.out.println("Oven is on. Baking...");
-                Cake cake = new Cake();
-                Inventory.collection.add(cake);
+                collection.add(cake);
                 System.out.println("You made a cake!");
             } else {
                 System.out.println("Oven is off. Turn it on first.");

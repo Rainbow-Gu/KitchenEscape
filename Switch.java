@@ -6,7 +6,7 @@ public class Switch extends Item{
     static boolean onOff;
     String name;
 
-    public Switch (String name) {
+    public Switch (String name, boolean onOff) {
         super(name);
     }
 

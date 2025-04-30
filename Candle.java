@@ -1,8 +1,8 @@
 public class Candle extends Switch {
     
 
-    public Candle () {
-        super("candle");
+    public Candle (boolean onOff) {
+        super("candle", onOff);
     }
 
     public static boolean light () {

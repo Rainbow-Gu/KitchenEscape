@@ -4,12 +4,12 @@ public class Stove extends Switch {
 
     static ArrayList<Item> items;
 
-    public Stove () {
-        super("stove");
+    public Stove (boolean onOff) {
+        super("stove", onOff);
     }
 
     public boolean checkPot () {
-        if (Inventory.collection.contains("pot") && Inventory.collection.contains("noodle") ) {
+        if (collection.contains(pot) && collection.contains(noodle) ) {
             if(Pot.isFilled()){
                 return true;
             } else {
@@ -19,7 +19,7 @@ public class Stove extends Switch {
         return false;
     }
 
-    public void addItem (Item i) {
+    public void addItemStove (Item i) {
         items.add(i);
     }
 

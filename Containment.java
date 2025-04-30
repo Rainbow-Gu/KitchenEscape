@@ -10,11 +10,12 @@ public class Containment extends Item {
     ArrayList<Item> items;
 
     //Constructor
-    public Containment (Item i1, Item i2) {
+    public Containment (Item i1, Item i2, boolean openClose) {
         super("Containment");
         this.items = new ArrayList<Item> ();
         items.add(i1);
         items.add(i2);
+        this.openClose = openClose;
     }
 
     public boolean open() {
@@ -25,7 +26,7 @@ public class Containment extends Item {
 
     public void take (Item i) {
         if (openClose == true) {
-            Inventory.addItem(i);
+            addItem(i);
             items.remove(i);
         }
     }

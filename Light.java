@@ -1,8 +1,10 @@
 public class Light extends Switch {
 
-    public Light() {
-        super("light");
+    public Light(boolean onOff) {
+        super("light", onOff);
     }
+    // counterintuitive: 
+    // onOff = false means light is on - normally
 
     public void showNumOnly(){
         if(this.checkSwitch()) {

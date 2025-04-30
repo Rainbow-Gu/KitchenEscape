@@ -5,8 +5,8 @@ public class Cake extends Item {
     }
 
     public boolean eatCondition() {
-        if (Inventory.collection.contains(candle) && Candle.light()) {
-            if (Inventory.collection.contains(fork) && Inventory.collection.contains("cake")) {
+        if (collection.contains(candle) && Candle.light()) {
+            if (collection.contains(fork) && collection.contains(cake)) {
                 return true; 
             } return false; 
         } return false; 
@@ -14,7 +14,7 @@ public class Cake extends Item {
 
     public void eat() {
         if(eatCondition()){
-            Inventory.removeItem(this);
+            removeItem(this);
             System.out.println(1);
         } else {
             System.out.println("Cake not ready to eat.");
