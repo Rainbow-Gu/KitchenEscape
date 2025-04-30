@@ -5,8 +5,8 @@ public class Cake extends Item {
     }
 
     public boolean eatCondition() {
-        if (Inventory.collection.contains("candle") && Candle.light()) {
-            if (Inventory.collection.contains("fork") && Inventory.collection.contains("cake")) {
+        if (Inventory.collection.contains(candle) && Candle.light()) {
+            if (Inventory.collection.contains(fork) && Inventory.collection.contains("cake")) {
                 return true; 
             } return false; 
         } return false; 

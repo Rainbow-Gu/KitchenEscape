@@ -36,8 +36,8 @@ public class Oven extends Switch {
     }
 
     public boolean checkPan () {
-        if (Inventory.collection.contains("pan")) {
-            if(Utility.containItems.contains("egg") && Utility.containItems.contains("flour")) {
+        if (Inventory.collection.contains(pan)) {
+            if(Utility.containItems.contains(egg) && Utility.containItems.contains("flour")) {
                 return true;
             } else {
                 return false;

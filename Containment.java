@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Containment {
+public class Containment extends Item {
     
     /**
      * Attributes
@@ -11,6 +11,7 @@ public class Containment {
 
     //Constructor
     public Containment (Item i1, Item i2) {
+        super("Containment");
         this.items = new ArrayList<Item> ();
         items.add(i1);
         items.add(i2);

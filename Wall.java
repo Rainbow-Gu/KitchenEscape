@@ -7,7 +7,7 @@ public class Wall {
      */
     ArrayList<Containment> containments;
     ArrayList<Item> items;
-    String direction;
+   
 
     public void describe() {
         System.out.println("");
