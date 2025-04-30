@@ -6,7 +6,7 @@ public class Door {
     int password;
 
     public boolean open(int password) {
-        if (password == 835) {
+        if (password == 123) {
             System.out.println("Hooray! You have successfully complete the game!");
             return true;
         } else {
