@@ -1,9 +1,9 @@
 import java.util.*;
 
-public class Game extends Item{
+public class Game extends Item {
 
     String direction;
-    Map<String, List<Item>> wallContents;
+    HashMap<String, List<Item>> wallContents;
 
     public Game(String direction) {
         super("Kitchen Escape");
@@ -35,12 +35,13 @@ public class Game extends Item{
     }
 
     public static void main(String[] args) {
+        System.out.println("intro:");
+        System.out.println("Which direction do you want to face? (north / south / east / west)");
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Which direction do you want to face? (face north / face south / face east / face west)");
         String inputDirection = scanner.nextLine();
 
-        new Game(inputDirection);
+        Game game = new Game(inputDirection);
+        //game.showWallContents();
 
         scanner.close(); // optional, good practice
     }

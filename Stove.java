@@ -41,7 +41,7 @@ public class Stove extends Switch {
         }
     }
 
-    public boolean addToBowl (Utility bowl, Noodle noodle) {
+    public static boolean addToBowl (Utility bowl, Noodle noodle) {
         if (Noodle.isCooked()) {
             bowl.addFood(noodle);
             return true;
