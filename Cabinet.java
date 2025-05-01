@@ -12,9 +12,7 @@ public class Cabinet extends Containment {
             openClose = true;
             System.out.println("The door of the cabinet is open.");
             return openClose;
-        } else {
-            return false;
+        } return false;
         }
-    }
-
 }
+

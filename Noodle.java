@@ -17,19 +17,17 @@ public class Noodle extends Item {
 
     // QUESTION - make it a string? these can also happen in game
     public boolean eatCondition() {
-        if (collection.contains(bowl)) {
-            if (cooked && collection.contains(fork)) {
-                cooked = true;
-                return true; 
-            } return false; 
-        } return false; 
+        if (stove.addToBowl() && collection.contains(fork)) {
+            return true;
+        } return false;
     }
 
     public void eat() {
         if(eatCondition()){
             removeItem(this);
+            System.out.println("A number shows up on the outside of the bowl because of heat. It is 2.");
         } else {
-            System.out.println("Noodle not ready.");
+            System.out.println("Noodle is not ready.");
         }
     }
 

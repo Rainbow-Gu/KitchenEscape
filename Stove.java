@@ -31,7 +31,7 @@ public class Stove extends Switch {
                 } else {
                     System.out.println("Stove is on. Cooking...");
                     Noodle.setCooked();
-                    System.out.println("Noodle is Cooked!");
+                    System.out.println("Noodle is cooked!");
                 }
             } else {
                 System.out.println("Stove is off. Turn it on first.");
@@ -41,5 +41,10 @@ public class Stove extends Switch {
         }
     }
 
-    public void addToBowl () {}
+    public boolean addToBowl (Utility bowl, Noodle noodle) {
+        if (Noodle.isCooked()) {
+            bowl.addFood(noodle);
+            return true;
+        } return false;
+    }
 }

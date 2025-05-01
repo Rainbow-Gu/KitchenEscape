@@ -3,7 +3,7 @@ public class Switch extends Item{
     /**
      * Attributes
      */
-    static boolean onOff;
+    static boolean onOff; //On = true, Off = false
     String name;
 
     public Switch (String name, boolean onOff) {

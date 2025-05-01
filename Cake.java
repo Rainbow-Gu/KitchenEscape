@@ -17,7 +17,7 @@ public class Cake extends Item {
             removeItem(this);
             System.out.println(1);
         } else {
-            System.out.println("Cake not ready to eat.");
+            System.out.println("Cake is not ready to eat.");
         }
     }
 
