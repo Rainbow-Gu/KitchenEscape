@@ -1,6 +1,6 @@
 public class Pot extends Utility {
 
-    static boolean waterFill;
+    boolean waterFill;
 
     public Pot(){
         super("pot");
@@ -10,7 +10,7 @@ public class Pot extends Utility {
         waterFill = true;
     }
 
-    public static boolean isFilled() {
+    public boolean isFilled() {
         return waterFill;
     }
     

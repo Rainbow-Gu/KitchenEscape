@@ -12,15 +12,19 @@ public class Containment extends Item {
     //Constructor
     public Containment (Item i1, Item i2, boolean openClose) {
         super("Containment");
-        this.items = new ArrayList<Item> ();
+        ArrayList<Item> items = new ArrayList<Item>();
         items.add(i1);
         items.add(i2);
-        this.openClose = openClose;
     }
 
     public boolean open() {
         if (openClose == false) {
             openClose = true;
+            if (items.get(1) != null){
+                System.out.println("You found " + items.get(0).getName()+ " and " + items.get(1).getName() + " .");
+            } else {
+                System.out.println("You found " + items.get(0).getName() + " .");
+            }
         } return openClose;
     }
 
@@ -33,6 +37,7 @@ public class Containment extends Item {
 
     public boolean close() {
         openClose = false;
+        System.out.println("You closed it.");
         return openClose;
     }
 }

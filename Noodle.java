@@ -7,18 +7,18 @@ public class Noodle extends Item {
         cooked = false;
     }
 
-    public static boolean isCooked() {
+    public boolean isCooked() {
         return cooked;
     }
 
-    public static void setCooked() {
+    public void setCooked() {
         cooked = true;
     }
 
     // QUESTION - make it a string? these can also happen in game
     public boolean eatCondition() {
         if (collection.contains(bowl) && collection.contains(noodle)) {
-            if (Stove.addToBowl(bowl, noodle) && collection.contains(fork)) {
+            if (stove.addToBowl(bowl, noodle) && collection.contains(fork)) {
                 return true;
             } return false; 
         } return false;

@@ -6,7 +6,11 @@ public class Item {
      * Attributes
      */
     String name;
-    public static ArrayList<Item> collection;
+    public static ArrayList<Item> collection = new ArrayList<Item>();
+    
+    static {
+        collection = new ArrayList<>();
+    }
 
     // North Wall
     static Item egg = new Item("egg");
@@ -14,8 +18,8 @@ public class Item {
     static Item key = new Item("key");
     static Balloon balloon = new Balloon();
     static Switch light = new Switch("light", false);
-    static Poster todoList = new Poster("todoList");
-    static Poster cakeRecipe = new Poster("cakeRecipe");
+    static Item todoList = new Item("todoList");
+    static Item cakeRecipe = new Item("cakeRecipe");
 
     // West Wall
     static Utility bowl = new Utility("bowl");
@@ -27,7 +31,7 @@ public class Item {
     static Oven oven = new Oven(false);
 
     // East Wall
-    static Poster hint = new Poster("hint");
+    static Item poster = new Item("poster");
     static Item fork = new Item("fork");
 
     // South Wall
@@ -36,7 +40,7 @@ public class Item {
     static Candle candle = new Candle(false);
     static Containment drawer1 = new Containment(noodle, flour, false);
     static Containment drawer2 = new Containment(candle, null, false);
-    static Switch faucet = new Switch("faucet", false);
+    static Faucet faucet = new Faucet(false);
 
     // Constructor
     public Item(String name){
@@ -49,6 +53,7 @@ public class Item {
 
     public static void addItem(Item i) {
         collection.add(i);
+        System.out.println(i.getName().toString() + " taken.");
     }
 
     public static void removeItem(Item i) {

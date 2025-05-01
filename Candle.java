@@ -5,8 +5,8 @@ public class Candle extends Switch {
         super("candle", onOff);
     }
 
-    public static boolean light () {
-        if (Stove.turnOn()) {
+    public boolean light () {
+        if (stove.turnOn()) {
             return true;
         } return false;
     }

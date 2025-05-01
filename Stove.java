@@ -2,15 +2,16 @@ import java.util.ArrayList;
 
 public class Stove extends Switch {
 
-    static ArrayList<Item> items;
+    ArrayList<Item> items;
 
     public Stove (boolean onOff) {
         super("stove", onOff);
+        items = new ArrayList<Item>();
     }
 
     public boolean checkPot () {
         if (collection.contains(pot) && collection.contains(noodle) ) {
-            if(Pot.isFilled()){
+            if(pot.isFilled()){
                 return true;
             } else {
                 return false;
@@ -26,11 +27,11 @@ public class Stove extends Switch {
     public void cook () {
         if(this.checkPot()) {
             if (this.checkSwitch()) {
-                if (Noodle.isCooked()){
+                if (noodle.isCooked()){
                     System.out.println("Noodle is already cooked.");
                 } else {
                     System.out.println("Stove is on. Cooking...");
-                    Noodle.setCooked();
+                    noodle.setCooked();
                     System.out.println("Noodle is cooked!");
                 }
             } else {
@@ -41,8 +42,8 @@ public class Stove extends Switch {
         }
     }
 
-    public static boolean addToBowl (Utility bowl, Noodle noodle) {
-        if (Noodle.isCooked()) {
+    public boolean addToBowl (Utility bowl, Noodle noodle) {
+        if (noodle.isCooked()) {
             bowl.addFood(noodle);
             return true;
         } return false;
