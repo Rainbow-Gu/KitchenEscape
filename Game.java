@@ -81,7 +81,7 @@ public class Game extends Item{
                 }
                 break;
             case "TAKE KEY":
-                if (walls.wallContents.get(currentDirection).contains(key)) {
+                if (walls.wallContents.get(currentDirection).contains(balloon)) {
                     addItem(key);
                     System.out.println("You found the key!");
                 } else {
@@ -138,14 +138,14 @@ public class Game extends Item{
                 }
                 break;
             case "TAKE NOODLE":
-                if (walls.wallContents.get(currentDirection).contains(noodle)) {
+                if (walls.wallContents.get(currentDirection).contains(drawer1)) {
                     addItem(noodle);
                 } else {
                     System.out.println("You can’t take the noodle from here.");
                 }
                 break;
             case "TAKE FLOUR":      
-                if (walls.wallContents.get(currentDirection).contains(flour)) {
+                if (walls.wallContents.get(currentDirection).contains(drawer1)) {
                     addItem(flour);
                 } else {
                     System.out.println("You can’t take the flour from here.");
@@ -173,7 +173,7 @@ public class Game extends Item{
                 }
                 break;
             case "TAKE CANDLE":
-                if (walls.wallContents.get(currentDirection).contains(candle)) {
+                if (Walls.wallContents.get(currentDirection).contains(drawer2)) {
                     addItem(candle);
                 } else {
                     System.out.println("You can’t take the candle from here.");
@@ -182,6 +182,7 @@ public class Game extends Item{
             case "TURN ON FAUCET":
                 if (walls.wallContents.get(currentDirection).contains(faucet)) {
                     faucet.turnOn();
+                    System.out.println("Faucet is on. Water running...");
                 } else {
                     System.out.println("You can’t access the faucet from here.");
                 }
@@ -227,7 +228,7 @@ public class Game extends Item{
                 }
                 break;
             case "TAKE BOWL":
-                if (walls.wallContents.get(currentDirection).contains(bowl)) {
+                if (walls.wallContents.get(currentDirection).contains(cabinet)) {
                     addItem(bowl);
                     System.out.println("You took the bowl.");
                 } else {
@@ -235,7 +236,7 @@ public class Game extends Item{
                 }
                 break;
             case "TAKE PAN":
-                if (walls.wallContents.get(currentDirection).contains(pan)) {
+                if (walls.wallContents.get(currentDirection).contains(cabinet)) {
                     addItem(pan);
                     System.out.println("You took the pan.");
                 } else {
@@ -262,11 +263,7 @@ public class Game extends Item{
                 }
                 break;
             case "EAT NOODLE":
-                if (walls.wallContents.get(currentDirection).contains(fork)) {
-                    noodle.eat();
-                } else {
-                    System.out.println("You can’t eat the noodle from here.");
-                }
+                noodle.eat();
                 break;
             case "PUT EGG IN PAN":
                 pan.addFood(egg);
