@@ -24,6 +24,7 @@ public class Game extends Item {
 
     private void showWallContents() {
         List<Item> items = wallContents.get(direction);
+        System.out.println(items);
         if (items != null) {
             System.out.println("You are facing " + direction + ". You see:");
             for (Item item : items) {
@@ -41,7 +42,8 @@ public class Game extends Item {
         String inputDirection = scanner.nextLine();
 
         Game game = new Game(inputDirection);
-        //game.showWallContents();
+        game.setupWalls();
+        game.showWallContents();
 
         scanner.close(); // optional, good practice
     }

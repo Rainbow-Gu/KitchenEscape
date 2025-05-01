@@ -11,7 +11,7 @@ public class Item {
     // North Wall
     static Item egg = new Item("egg");
     static Containment fridge = new Containment(egg, null, false);
-    Item key = new Item("key");
+    static Item key = new Item("key");
     static Balloon balloon = new Balloon();
     static Switch light = new Switch("light", false);
     static Poster todoList = new Poster("todoList");
@@ -20,7 +20,7 @@ public class Item {
     // West Wall
     static Utility bowl = new Utility("bowl");
     static Utility pan = new Utility("pan");
-    Cake cake = new Cake();
+    static Cake cake = new Cake();
     static Cabinet cabinet = new Cabinet(bowl, pan, false);
     static Pot pot = new Pot();
     static Stove stove = new Stove(false);
