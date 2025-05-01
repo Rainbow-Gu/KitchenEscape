@@ -23,7 +23,7 @@ public class Walls extends Item {
 
         if (!Game.lightOn) {
             if ("face east".equals(direction)) {
-                System.out.println("It’s dark. You can barely make out a number 3 on the wall.");
+                System.out.println("It is dark. You can barely make out a number 3 on the wall.");
             } else {
                 System.out.println("It's too dark to see anything. Try turning around");
             }
@@ -33,7 +33,7 @@ public class Walls extends Item {
         if (items != null) {
             System.out.println("You are facing " + direction + ". You see:");
             for (Item item : items) {
-                System.out.println("- " + item);
+                System.out.println("- " + item.getName());
             }
         } else {
             System.out.println("You are facing an unknown direction.");

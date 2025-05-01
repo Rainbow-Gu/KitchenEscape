@@ -10,8 +10,8 @@ public class Containment extends Item {
     ArrayList<Item> items;
 
     //Constructor
-    public Containment (Item i1, Item i2, boolean openClose) {
-        super("Containment");
+    public Containment (String name, Item i1, Item i2, boolean openClose) {
+        super(name);
         ArrayList<Item> items = new ArrayList<Item>();
         items.add(i1);
         items.add(i2);

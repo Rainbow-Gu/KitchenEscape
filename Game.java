@@ -14,7 +14,8 @@ public class Game extends Item{
     public void start() {
         Scanner scanner = new Scanner(System.in);
         String command;
-        System.out.println("It’s your birthday, but you are locked in the kitchen...");
+        System.out.println("It is your birthday, but you are locked in the kitchen...");
+        
         walls.showWallContents(currentDirection);
 
         while (true) {
@@ -26,7 +27,7 @@ public class Game extends Item{
                 System.out.println("Thanks for playing!");
                 break;
             }
-
+            System.out.println("Explore the 4 walls around you and find a way out...");
             // Pass command to handler
             handleCommand(command);
         }
@@ -53,31 +54,31 @@ public class Game extends Item{
                 walls.showWallContents(currentDirection);
                 break;
             case "OPEN FRIDGE":
-                if (walls.wallContents.get(currentDirection).contains(fridge)) {
+                if (Walls.wallContents.get(currentDirection).contains(fridge)) {
                     fridge.open();
                 } else {
-                    System.out.println("You can’t access the fridge from here.");
+                    System.out.println("You cannot access the fridge from here.");
                 }
                 break;
             case "CLOSE FRIDGE":
                 if (walls.wallContents.get(currentDirection).contains(fridge)) {
                     fridge.close();
                 } else {
-                    System.out.println("You can’t access the fridge from here.");
+                    System.out.println("You cannot access the fridge from here.");
                 }
                 break;
             case "TAKE EGG":
                 if (walls.wallContents.get(currentDirection).contains(fridge)) {
                     addItem(egg);
                 } else {
-                    System.out.println("You can’t access the egg from here.");
+                    System.out.println("You cannot access the egg from here.");
                 }
                 break;
             case "POP BALLOON":
                 if (walls.wallContents.get(currentDirection).contains(balloon)) {
                     balloon.pop();
                 } else {
-                    System.out.println("You can’t pop the balloon from here.");
+                    System.out.println("You cannot pop the balloon from here.");
                 }
                 break;
             case "TAKE KEY":
@@ -85,13 +86,13 @@ public class Game extends Item{
                     addItem(key);
                     System.out.println("You found the key!");
                 } else {
-                    System.out.println("You can’t take the key from here.");
+                    System.out.println("You cannot take the key from here.");
                 }
                 break;
             case "READ TODO LIST":
                 System.out.println("1. Make Noodle\n2. Bake Cake");
                 break;
-            case "READ RECIPE":
+            case "READ CAKE RECIPE":
                 System.out.println("To make a cake you need: flour, an egg, and a baking pan in the oven.");
                 break;
             case "READ POSER":
@@ -350,7 +351,6 @@ public class Game extends Item{
         String input = scanner.nextLine().trim().toUpperCase();
         if (!input.equals("START")) {
             System.out.println("You didn't start the game. Exiting...");
-            return;
         }
 
         // Initialize game state...

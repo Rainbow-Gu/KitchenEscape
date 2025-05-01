@@ -14,18 +14,18 @@ public class Item {
 
     // North Wall
     static Item egg = new Item("egg");
-    static Containment fridge = new Containment(egg, null, false);
+    static Containment fridge = new Containment("Fridge", egg, null, false);
     static Item key = new Item("key");
     static Balloon balloon = new Balloon();
-    static Switch light = new Switch("light", false);
+    static Switch light = new Switch("Light", false);
     static Item todoList = new Item("todoList");
-    static Item cakeRecipe = new Item("cakeRecipe");
+    static Item cakeRecipe = new Item("Cake recipe");
 
     // West Wall
-    static Utility bowl = new Utility("bowl");
-    static Utility pan = new Utility("pan");
+    static Utility bowl = new Utility("Bowl");
+    static Utility pan = new Utility("Pan");
     static Cake cake = new Cake();
-    static Cabinet cabinet = new Cabinet(bowl, pan, false);
+    static Cabinet cabinet = new Cabinet("Cabinet", bowl, pan, false);
     static Pot pot = new Pot();
     static Stove stove = new Stove(false);
     static Oven oven = new Oven(false);
@@ -38,8 +38,8 @@ public class Item {
     static Item flour = new Item("flour");
     static Noodle noodle = new Noodle();
     static Candle candle = new Candle(false);
-    static Containment drawer1 = new Containment(noodle, flour, false);
-    static Containment drawer2 = new Containment(candle, null, false);
+    static Containment drawer1 = new Containment("Drawer 1", noodle, flour, false);
+    static Containment drawer2 = new Containment("Drawer 2", candle, null, false);
     static Faucet faucet = new Faucet(false);
 
     // Constructor
