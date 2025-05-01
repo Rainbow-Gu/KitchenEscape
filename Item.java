@@ -18,7 +18,7 @@ public class Item {
     static Item key = new Item("key");
     static Balloon balloon = new Balloon();
     static Switch light = new Switch("Light", false);
-    static Item todoList = new Item("todoList");
+    static Item todoList = new Item("todo List");
     static Item cakeRecipe = new Item("Cake recipe");
 
     // West Wall

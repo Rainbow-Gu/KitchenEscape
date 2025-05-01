@@ -12,7 +12,7 @@ public class Containment extends Item {
     //Constructor
     public Containment (String name, Item i1, Item i2, boolean openClose) {
         super(name);
-        ArrayList<Item> items = new ArrayList<Item>();
+        this.items = new ArrayList<Item>();
         items.add(i1);
         items.add(i2);
     }
@@ -23,7 +23,7 @@ public class Containment extends Item {
             if (items.get(1) != null){
                 System.out.println("You found " + items.get(0).getName()+ " and " + items.get(1).getName() + " .");
             } else {
-                System.out.println("You found " + items.get(0).getName() + " .");
+                System.out.println("You found " + items.get(0).getName() + ".");
             }
         } return openClose;
     }

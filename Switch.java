@@ -4,7 +4,6 @@ public class Switch extends Item{
      * Attributes
      */
     boolean onOff; //On = true, Off = false
-    String name;
 
     public Switch (String name, boolean onOff) {
         super(name);

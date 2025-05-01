@@ -27,7 +27,6 @@ public class Game extends Item{
                 System.out.println("Thanks for playing!");
                 break;
             }
-            System.out.println("Explore the 4 walls around you and find a way out...");
             // Pass command to handler
             handleCommand(command);
         }
@@ -95,15 +94,15 @@ public class Game extends Item{
             case "READ CAKE RECIPE":
                 System.out.println("To make a cake you need: flour, an egg, and a baking pan in the oven.");
                 break;
-            case "READ POSER":
+            case "READ POSTER":
                 System.out.println("🍜 ～ 🎂 ～ 💡");
                 break;
-            case "TURN OFF SWITCH":
+            case "TURN OFF LIGHT":
                 lightOn = false;
                 System.out.println("The room is dark.");
                 walls.showWallContents(currentDirection);
                 break;
-            case "TURN ON SWITCH":
+            case "TURN ON LIGHT":
                 lightOn = true;
                 System.out.println("The light is on.");
                 walls.showWallContents(currentDirection); // re-show what's in front
