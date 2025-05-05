@@ -17,7 +17,7 @@ public class Noodle extends Item {
 
     // QUESTION - make it a string? these can also happen in game
     public boolean eatCondition() {
-        if (collection.contains(bowl) && collection.contains(noodle)) {
+        if (collection.contains(bowl) && bowl.containItems.contains(noodle)) {
             if (stove.addToBowl(bowl, noodle) && collection.contains(fork)) {
                 return true;
             } return false; 

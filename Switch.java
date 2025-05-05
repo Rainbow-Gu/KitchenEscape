@@ -7,6 +7,7 @@ public class Switch extends Item{
 
     public Switch (String name, boolean onOff) {
         super(name);
+        this.onOff = onOff;
     }
 
     public String getName() {

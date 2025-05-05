@@ -10,7 +10,7 @@ public class Stove extends Switch {
     }
 
     public boolean checkPot () {
-        if (collection.contains(pot) && collection.contains(noodle) ) {
+        if (items.contains(pot) && pot.containItems.contains(noodle) ) {
             if(pot.isFilled()){
                 return true;
             } else {

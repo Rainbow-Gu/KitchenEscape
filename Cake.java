@@ -5,8 +5,8 @@ public class Cake extends Item {
     }
 
     public boolean burnCondition() {
-        if (collection.contains(candle) && candle.light()) {
-            if (collection.contains(fork) && collection.contains(cake)) {
+        if (candle.lit()) {
+            if (collection.contains(cake)) {
                 return true; 
             } return false; 
         } return false; 
@@ -15,9 +15,9 @@ public class Cake extends Item {
     public void burnt() {
         if(burnCondition()){
             removeItem(this);
-            System.out.println(1);
+            System.out.println("Candle is on the cake. As it burns, you see the number 1 on it.");
         } else {
-            System.out.println("Cake is not ready for celebration.");
+            System.out.println("Action inapplicable.");
         }
     }
 

@@ -62,13 +62,14 @@ public class Game extends Item{
             case "CLOSE FRIDGE":
                 if (walls.wallContents.get(currentDirection).contains(fridge)) {
                     fridge.close();
+                    System.out.println("Fridge closed.");
                 } else {
                     System.out.println("You cannot access the fridge from here.");
                 }
                 break;
             case "TAKE EGG":
                 if (walls.wallContents.get(currentDirection).contains(fridge)) {
-                    addItem(egg);
+                    fridge.take(egg);
                 } else {
                     System.out.println("You cannot access the egg from here.");
                 }
@@ -82,8 +83,11 @@ public class Game extends Item{
                 break;
             case "TAKE KEY":
                 if (walls.wallContents.get(currentDirection).contains(balloon)) {
-                    addItem(key);
-                    System.out.println("You found the key!");
+                    if (balloon.isPopped()) {
+                        addItem(key);
+                    } else if (!balloon.isPopped()) {
+                        System.out.println("You need to pop the balloon first.");
+                    }
                 } else {
                     System.out.println("You cannot take the key from here.");
                 }
@@ -141,14 +145,14 @@ public class Game extends Item{
                 break;
             case "TAKE NOODLE":
                 if (walls.wallContents.get(currentDirection).contains(drawer1)) {
-                    addItem(noodle);
+                    drawer1.take(noodle);
                 } else {
                     System.out.println("You can’t take the noodle from here.");
                 }
                 break;
             case "TAKE FLOUR":      
                 if (walls.wallContents.get(currentDirection).contains(drawer1)) {
-                    addItem(flour);
+                    drawer1.take(flour);
                 } else {
                     System.out.println("You can’t take the flour from here.");
                 }
@@ -160,23 +164,25 @@ public class Game extends Item{
                     System.out.println("You can’t access the drawer from here.");
                 }
                 break;
-            case "CLOSE DRAWER1":
+            case "CLOSE DRAWER 1":
                 if (walls.wallContents.get(currentDirection).contains(drawer1)) {
                     drawer1.close();
+                    System.out.println("Drawer 1 closed.");
                 } else {
                     System.out.println("You can’t access the drawer from here.");
                 }
                 break;
-            case "CLOSE DRAWER2":
+            case "CLOSE DRAWER 2":
                 if (walls.wallContents.get(currentDirection).contains(drawer1)) {
                     drawer1.close();
+                    System.out.println("Drawer 2 closed.");
                 } else {
                     System.out.println("You can’t access the drawer from here.");
                 }
                 break;
             case "TAKE CANDLE":
                 if (Walls.wallContents.get(currentDirection).contains(drawer2)) {
-                    addItem(candle);
+                    drawer2.take(candle);
                 } else {
                     System.out.println("You can’t take the candle from here.");
                 }
@@ -191,14 +197,22 @@ public class Game extends Item{
                 break;
             case "FILL POT": 
                 if (walls.wallContents.get(currentDirection).contains(faucet)) {
-                    faucet.fillPot(pot, true);
+                    faucet.fillPot();
                 } else {
                     System.out.println("You can’t fill the pot from here.");
+                }
+                break;
+            case "POT STATUS":
+                if (pot.isFilled()){
+                    System.out.println("The pot is filled with water.");
+                } else {
+                    System.out.println("The pot is empty.");
                 }
                 break;
             case "TURN OFF FAUCET":
                 if (walls.wallContents.get(currentDirection).contains(faucet)) {
                     faucet.turnOff();
+                    System.out.println("Faucet is off.");
                 } else {
                     System.out.println("You can’t access the faucet from here.");
                 }
@@ -214,13 +228,10 @@ public class Game extends Item{
             case "TURN ON STOVE":
                 if (walls.wallContents.get(currentDirection).contains(stove)) {
                     stove.turnOn();
-                    System.out.println("Stove is on. Water boiling…");
+                    System.out.println("Stove is on.");
                 } else {
                     System.out.println("You can’t turn on the stove from here.");
                 }
-                break;
-            case "PUT NOODLE IN POT":
-                bowl.addFood(noodle);
                 break;
             case "TURN OFF STOVE":
                 if (walls.wallContents.get(currentDirection).contains(stove)) {
@@ -232,15 +243,14 @@ public class Game extends Item{
                 break;
             case "TAKE BOWL":
                 if (walls.wallContents.get(currentDirection).contains(cabinet)) {
-                    addItem(bowl);
-                    System.out.println("You took the bowl.");
+                    cabinet.take(bowl);
                 } else {
                     System.out.println("You can’t take the bowl from here.");
                 }
                 break;
             case "TAKE PAN":
                 if (walls.wallContents.get(currentDirection).contains(cabinet)) {
-                    addItem(pan);
+                    cabinet.take(pan);
                     System.out.println("You took the pan.");
                 } else {
                     System.out.println("You can’t take the pan from here.");
@@ -252,6 +262,9 @@ public class Game extends Item{
                 } else {
                     System.out.println("You can’t cook the noodle from here.");
                 }
+                break;
+            case "PUT NOODLE IN POT":
+                pot.addFood(noodle);
                 break;
             case "PUT NOODLE IN BOWL":
                 bowl.addFood(noodle);
@@ -270,11 +283,9 @@ public class Game extends Item{
                 break;
             case "PUT EGG IN PAN":
                 pan.addFood(egg);
-                System.out.println("Egg is in pan.");
                 break;
             case "PUT FLOUR IN PAN":
                 pan.addFood(flour);
-                System.out.println("Egg is in pan.");
                 break;
             case "OPEN OVEN":
                 if (walls.wallContents.get(currentDirection).contains(oven)) {
@@ -293,7 +304,6 @@ public class Game extends Item{
             case "PUT PAN IN OVEN":
                 if (walls.wallContents.get(currentDirection).contains(oven)) {
                     oven.addItemOven(pan);
-                    System.out.println("Pan is in oven.");
                 } else {
                     System.out.println("You can’t put the pan in the oven from here.");
                 }
@@ -305,26 +315,38 @@ public class Game extends Item{
                 } else {
                     System.out.println("You can’t turn on the oven from here.");
                 }
+                break;
+            case "TURN OFF OVEN":
+                if (walls.wallContents.get(currentDirection).contains(oven)) {
+                    oven.turnOff();
+                    System.out.println("Oven is turned off.");
+                } else {
+                    System.out.println("You can’t turn on the oven from here.");
+                }
+                break;
+            case "BAKE CAKE":
+                if (walls.wallContents.get(currentDirection).contains(oven)) {
+                    oven.cook();
+                } else {
+                    System.out.println("You can’t bake cake from here.");
+                }
                 break; 
             case "TAKE CAKE":
                 if (walls.wallContents.get(currentDirection).contains(oven)) {
-                    addItem(cake);
-                    System.out.println("You took the cake.");
+                    oven.take(cake);
                 } else {
                     System.out.println("You can’t take the cake from here.");
                 }
                 break;
-            case "LIGHT CANDLE":
-                if (walls.wallContents.get(currentDirection).contains(stove)) {
-                    candle.light();
-                    System.out.println("Candle is lit.");
-                } else {
-                    System.out.println("You can’t light the candle from here.");
-                }
-                break;
+            // case "LIGHT CANDLE":
+            //     if (walls.wallContents.get(currentDirection).contains(stove)) {
+            //         candle.lightCandle();
+            //     } else {
+            //         System.out.println("You can’t light the candle from here.");
+            //     }
+            //     break;
             case "PUT CANDLE ON CAKE":
                 cake.burnt();
-                System.out.println("Candle is on the cake.");
                 break;
             case "OPEN DOOR":
                 System.out.println("The door is locked. Please type the 3-digit password:");
@@ -342,18 +364,24 @@ public class Game extends Item{
                 break;
             case "HELP":
                 System.out.println("------------[GAME MENU - Commands]----------");
+                System.out.println("|================ Actions =================|");
                 System.out.println("|            'face' -> Face a Wall         |");
                 System.out.println("|            'take' -> Take an item        |");
                 System.out.println("|            'open' -> Open doors          |");
                 System.out.println("|           'close' -> Close doors         |");
-                System.out.println("|             'put' -> Put sth. into/in/on |");
-                System.out.println("|            'read' -> Read sth.           |");
                 System.out.println("|     'turn on/off' -> Turn on/off sth.    |");
-                System.out.println("|            'fill' -> Fill container      |");
-                System.out.println("|             'eat' -> Eat cooked food     |");
-                System.out.println("|           'light' -> light sth.          |");
+                System.out.println("|             'put' -> Put sth. in/on      |");
                 System.out.println("|             'pop' -> pop sth.            |");
+                System.out.println("|            'fill' -> Fill container      |");
+                System.out.println("|            'cook' -> Cook noodle         |");
+                System.out.println("|            'bake' -> Bake cake           |");
+                System.out.println("|             'eat' -> Eat cooked food     |");
+                System.out.println("|            'read' -> Read sth.           |");
+                System.out.println("|           'light' -> light sth.          |");
+                System.out.println("|================= Helpers ================|");
                 System.out.println("|'check collection' -> see what you have   |");
+                System.out.println("|      'pot status' -> pot have water?     |");
+                System.out.println("|       'quit/exit' -> Quit the game       |");
                 System.out.println("|            'help' -> Get all commands    |");
                 System.out.println("--------------[CONTINUE PLAYING]-----------");
                 break;
@@ -372,32 +400,39 @@ public class Game extends Item{
 
         String input = scanner.nextLine().trim().toUpperCase();
         if (!input.equals("START")) {
-            System.out.println("You didn't start the game. Exiting...");
+            System.out.println("You didn't start the game. Bye 👋 ");
+        } else  {
+            System.out.println("------------[GAME MENU - Commands]----------");
+            System.out.println("|================ Actions =================|");
+            System.out.println("|            'face' -> Face a Wall         |");
+            System.out.println("|            'take' -> Take an item        |");
+            System.out.println("|            'open' -> Open doors          |");
+            System.out.println("|           'close' -> Close doors         |");
+            System.out.println("|     'turn on/off' -> Turn on/off sth.    |");
+            System.out.println("|             'put' -> Put sth. in/on      |");
+            System.out.println("|             'pop' -> pop sth.            |");
+            System.out.println("|            'fill' -> Fill container      |");
+            System.out.println("|            'cook' -> Cook noodle         |");
+            System.out.println("|            'bake' -> Bake cake           |");
+            System.out.println("|             'eat' -> Eat cooked food     |");
+            System.out.println("|            'read' -> Read sth.           |");
+            System.out.println("|           'light' -> light sth.          |");
+            System.out.println("|================= Helpers ================|");
+            System.out.println("|'check collection' -> see what you have   |");
+            System.out.println("|      'pot status' -> pot have water?     |");
+            System.out.println("|       'quit/exit' -> Quit the game       |");
+            System.out.println("|            'help' -> Get all commands    |");
+            System.out.println("--------------[CONTINUE PLAYING]-----------");
+            System.out.println();
+            System.out.println("        |   [Game Starts]   |");
+            System.out.println("        V   [Game Starts]   V");
+    
+            // Initialize game state...
+            Game game = new Game();  // Your Game class holds objects, room layout, etc.
+            game.start();            // Start game logic in a method
+    
+            scanner.close();
+
         }
-
-        System.out.println("------------[GAME MENU - Commands]----------");
-        System.out.println("|            'face' -> Face a Wall         |");
-        System.out.println("|            'take' -> Take an item        |");
-        System.out.println("|            'open' -> Open doors          |");
-        System.out.println("|           'close' -> Close doors         |");
-        System.out.println("|             'put' -> Put sth. into/in/on |");
-        System.out.println("|            'read' -> Read sth.           |");
-        System.out.println("|     'turn on/off' -> Turn on/off sth.    |");
-        System.out.println("|            'fill' -> Fill container      |");
-        System.out.println("|             'eat' -> Eat cooked food     |");
-        System.out.println("|           'light' -> light sth.          |");
-        System.out.println("|             'pop' -> pop sth.            |");
-        System.out.println("|'check collection' -> see what you have   |");
-        System.out.println("|            'help' -> Get all commands    |");
-        System.out.println("--------------[CONTINUE PLAYING]-----------");
-        System.out.println();
-        System.out.println("        |   [Game Starts]   |");
-        System.out.println("        V   [Game Starts]   V");
-
-        // Initialize game state...
-        Game game = new Game();  // Your Game class holds objects, room layout, etc.
-        game.start();            // Start game logic in a method
-
-        scanner.close();
     }
 }

@@ -1,9 +1,13 @@
-public class Door {
+public class Door extends Item {
 
     /*
      * Attributes
      */
     int password;
+
+    public Door() {
+        super("door");
+    }
 
     public boolean open(int password) {
         if (password == 123) {
