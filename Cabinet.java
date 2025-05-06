@@ -2,7 +2,13 @@ import java.util.ArrayList;
 
 public class Cabinet extends Containment {
 
-    //Constructor
+    /**
+     * Constructor
+     * @param name cabinet
+     * @param item1 one item in the cabinet
+     * @param item2 another item in the cabinet
+     * @param openClose true if cabinet is open
+     */
     public Cabinet (String name, Item item1, Item item2, boolean openClose) {
         super(name, item1, item2, openClose);
         ArrayList<Item> items = new ArrayList<Item>();
@@ -10,6 +16,10 @@ public class Cabinet extends Containment {
         items.add(item2);
     }
 
+    /**
+     * checks if the player has gotten the key, opens the cabinet, and shows what it contains
+     * @return true if cabinet is open
+     */
     public boolean open() {
         if (collection.contains(key)) {
             if (!openClose) {

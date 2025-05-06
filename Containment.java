@@ -5,16 +5,28 @@ public class Containment extends Item {
     /**
      * Attributes
      */
-
     boolean openClose; //true if it is open
-    ArrayList<Item> items;
+    ArrayList<Item> items; //list of items in the containment
 
-    //Constructor
+    /**
+     * Constructor for containment with only one item
+     * @param name the name of the containment
+     * @param i1 one item
+     * @param openClose true if the containment is open
+     */
     public Containment (String name, Item i1, boolean openClose) {
         super(name);
         this.items = new ArrayList<Item>();
         items.add(i1);
     }
+
+    /**
+     * overloaded constructor for containment with two items
+     * @param name the name of the containment
+     * @param i1 one item
+     * @param i2 another item
+     * @param openClose true if the containment is open
+     */
     public Containment (String name, Item i1, Item i2, boolean openClose) {
         super(name);
         this.items = new ArrayList<Item>();
@@ -22,6 +34,10 @@ public class Containment extends Item {
         items.add(i2);
     }
     
+    /**
+     * opens the containment and shows what it contains
+     * @return true if the containment is open
+     */
     public boolean open() {
         if (openClose == false) {
             openClose = true;
@@ -44,7 +60,11 @@ public class Containment extends Item {
         }
         return openClose;
     }
-
+    
+    /**
+     * takes an item from the containment and adds to the collection
+     * @param i item to take
+     */
     public void take(Item i) {
         if (openClose) {
             if (items.contains(i)) {
@@ -58,6 +78,10 @@ public class Containment extends Item {
         }
     }
 
+    /**
+     * 
+     * @return false if the containment is close
+     */
     public boolean close() {
         openClose = false;
         return openClose;

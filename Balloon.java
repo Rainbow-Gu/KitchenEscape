@@ -1,11 +1,20 @@
 public class Balloon extends Item{
     
-    private boolean popped = false;
+    /**
+     * Attributes
+     */
+    private boolean popped = false; //false if balloon is intact
 
+    /**
+     * Constructor
+     */
     public Balloon (){
         super("Balloon");
     }
     
+    /**
+     * pops the balloon to get the key
+     */
     public void pop () {
 
         if (collection.contains(fork)) {
@@ -16,6 +25,10 @@ public class Balloon extends Item{
         }
     }
 
+    /**
+     * check if the balloon is popped
+     * @return true if the balloon is popped
+     */
     public boolean isPopped() {
         return popped;
     }

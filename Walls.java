@@ -2,13 +2,22 @@ import java.util.*;
 
 public class Walls extends Item {
 
+    /**
+     * Attributes
+     */
     String direction;
     static HashMap<String, List<Item>> wallContents;
 
+    /**
+     * Constructor
+     */
     public Walls() {
         super("<Name Unknown>");
     }
 
+    /**
+     * initializes the 4 walls
+     */
     public static void setupWalls() {
         wallContents = new HashMap<>();
 
@@ -19,6 +28,10 @@ public class Walls extends Item {
 
     }
 
+    /**
+     * shows what the player should see when facing certain direction and shows one digit of the password conditionally
+     * @param direction which wall the player is facing
+     */
     public void showWallContents(String direction) {
 
         if (!Game.lightOn) {
@@ -55,7 +68,6 @@ public class Walls extends Item {
                     System.out.println("- " + item.getName());
                 }
             }
-
         } else {
             System.out.println("You are facing an unknown direction.");
         }

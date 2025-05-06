@@ -1,10 +1,17 @@
 public class Candle extends Switch {
     
-
+    /**
+     * Constructor
+     * @param onOff true if the candle is lit
+     */
     public Candle (boolean onOff) {
         super("candle", onOff);
     }
 
+    /**
+     * 
+     * @return true if the candle is lit
+     */
     public boolean lightCandle () {
         if (stove.turnOn() && collection.contains(candle)) {
             System.out.println("Candle is lit.");
@@ -17,6 +24,10 @@ public class Candle extends Switch {
         }
     }
 
+    /**
+     * lights the candle
+     * @return true if candle is lit
+     */
     public boolean lit() {
         return lightCandle(); 
     }

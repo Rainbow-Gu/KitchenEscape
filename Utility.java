@@ -5,16 +5,21 @@ public class Utility extends Item {
     /*
      * Attributes
      */
+    ArrayList<Item> containItems; //list of items in the utility
 
-    ArrayList<Item> containItems;
-
-    // Constructor
+    /**
+     * Constructor
+     * @param name name of the utility instance
+     */
     public Utility(String name) {
         super(name);
         containItems = new ArrayList<Item>();
     }
 
-    // put food in utility
+    /**
+     * puts food in utility
+     * @param food food to be put
+     */
     public void addFood (Item food) {
         if(collection.contains(this) || stove.items.contains(this) || oven.items.contains(this)) {
             if(collection.contains(food)|| pot.containItems.contains(food)) {

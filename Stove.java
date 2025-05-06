@@ -2,13 +2,24 @@ import java.util.ArrayList;
 
 public class Stove extends Switch {
 
-    ArrayList<Item> items;
+    /**
+     * Attributes
+     */
+    ArrayList<Item> items; //list of items on the stove
 
+    /**
+     * Constructor
+     * @param onOff true if stove is on
+     */
     public Stove (boolean onOff) {
         super("stove", onOff);
         items = new ArrayList<Item>();
     }
 
+    /**
+     * checks if pot is on the stove and there is noodle in the pot
+     * @return true if pot is ready
+     */
     public boolean checkPot () {
         if (items.contains(pot) && pot.containItems.contains(noodle) ) {
             if(pot.isFilled()){
@@ -16,14 +27,20 @@ public class Stove extends Switch {
             } else {
                 return false;
             }
-        }
-        return false;
+        } return false;
     }
 
+    /**
+     * adds item (pot) to stove
+     * @param i pot
+     */
     public void addItemStove (Item i) {
         items.add(i);
     }
 
+    /**
+     * cooks noodle when the pot is ready and the stove is on
+     */
     public void cook () {
         if(this.checkPot()) {
             if (this.checkSwitch()) {
@@ -42,6 +59,12 @@ public class Stove extends Switch {
         }
     }
 
+    /**
+     * adds cooked noodle to bowl
+     * @param bowl bowl
+     * @param noodle cooked noodle
+     * @return true if action is accomplished
+     */
     public boolean addToBowl (Utility bowl, Noodle noodle) {
         if (noodle.isCooked()) {
             bowl.addFood(noodle);

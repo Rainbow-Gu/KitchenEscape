@@ -1,9 +1,16 @@
 public class Cake extends Item {
     
+    /**
+     * Constructor
+     */
     public Cake () {
         super("cake");
     }
 
+    /**
+     * checks if candle is lit and the player has made a cake
+     * @return true if conditions are met
+     */
     public boolean burnCondition() {
         if (candle.lit()) {
             if (collection.contains(cake)) {
@@ -12,6 +19,9 @@ public class Cake extends Item {
         } return false; 
     }
 
+    /**
+     * shows one digit of the password
+     */
     public void burnt() {
         if(burnCondition()){
             removeItem(this);

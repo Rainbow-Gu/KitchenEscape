@@ -1,10 +1,15 @@
 public class Faucet extends Switch{
     
+    /**
+     * Constructor
+     */
     public Faucet () {
         super("faucet", false);
-
     }
 
+    /**
+     * fill the pot if pot is in the collection and faucet is turned on
+     */
     public void fillPot(){
         if(collection.contains(pot) && this.onOff == true) {
             pot.fillWater();

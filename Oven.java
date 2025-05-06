@@ -5,27 +5,42 @@ public class Oven extends Switch {
     /*
      * Attributes
      */
+    boolean opened; //true if oven is open
+    static ArrayList<Item> items; //list of items inside the oven
 
-    boolean opened; 
-    static ArrayList<Item> items;
-
+    /**
+     * Constructor
+     * @param onOff true if oven is on
+     */
     public Oven (boolean onOff){
         super("oven", onOff);
         items = new ArrayList<Item>();
     }
 
+    /**
+     * opens oven
+     * @return true if oven is open
+     */
     public boolean open () {
         opened = true;
         System.out.println("Oven opened.");
         return opened;
     }
     
+    /**
+     * closes oven
+     * @return false if oven is close
+     */
     public boolean close () {
         opened = false;
         System.out.println("Oven closed."); // cannot see what's inside
         return opened;
     }
 
+    /**
+     * puts item (cake) into oven
+     * @param i item to be put into oven
+     */
     public void addItemOven (Item i) {
         if (opened) {
             System.out.println("Pan is in the oven.");
@@ -36,6 +51,10 @@ public class Oven extends Switch {
         collection.remove(i);
     }
 
+    /**
+     * checks if pan is in the oven
+     * @return true if pan is in the oven
+     */
     public boolean checkPan () {
         if (items.contains(pan)) {
             if(pan.containItems.contains(egg) && pan.containItems.contains(flour)) {
@@ -47,7 +66,10 @@ public class Oven extends Switch {
             return false;
         }
     }
-
+    
+    /**
+     * bakes cake
+     */
     public void cook() {
         if(this.checkPan()) {
             if(!opened) {
@@ -66,6 +88,10 @@ public class Oven extends Switch {
         }
     }
 
+    /**
+     * takes cake and adds to the collection
+     * @param i cake
+     */
     public void take(Item i) {
         if (opened && !onOff) {
             if (pan.containItems.contains(i)) {

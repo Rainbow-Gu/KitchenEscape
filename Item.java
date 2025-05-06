@@ -44,15 +44,26 @@ public class Item {
     static Containment drawer2 = new Containment("Drawer 2", candle, false);
     static Faucet faucet = new Faucet();
 
-    // Constructor
+    /**
+     * Constructor
+     * @param name the name of the instance item
+     */
     public Item(String name){
         this.name = name;
     }
 
+    /**
+     * accessor for item's name
+     * @return item's name
+     */
     public String getName(){
         return name;
     }
 
+    /**
+     * adds an item to the collection when it is collected
+     * @param i the item to add
+     */
     public static void addItem(Item i) {
         if (!collection.contains(i)) {
             collection.add(i);
@@ -69,10 +80,17 @@ public class Item {
         System.out.println(capitalized + " taken.");
     }
 
+    /**
+     * removes an item from the collection when it is used
+     * @param i the item to remove
+     */
     public static void removeItem(Item i) {
         collection.remove(i);
     }
     
+    /**
+     * prints the list of items in the collection when the player wants to check collection
+     */
     public static void printInventory() {
         if (collection.isEmpty()){
             System.out.println("You have nothing in your bag...");

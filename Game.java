@@ -2,15 +2,24 @@ import java.util.Scanner;
 
 public class Game extends Item{
 
+    /**
+     * Attributes
+     */
     private static String currentDirection = "face north"; // default starting direction
     private Walls walls;
-    static boolean lightOn = true; // true if light is on
+    static boolean lightOn = true; // true if light is on; default being on
 
+    /**
+     * Constructor
+     */
     public Game() {
         super("Kitchen Escape");
         walls = new Walls();
     }
 
+    /**
+     * starts game
+     */
     public void start() {
         Scanner scanner = new Scanner(System.in);
         String command;
@@ -34,6 +43,10 @@ public class Game extends Item{
         scanner.close();
     }
 
+    /**
+     * deals with all possible inputs and calls corresponding methods
+     * @param command player input
+     */
     private void handleCommand(String command) {
         switch (command) {
             case "FACE NORTH":
