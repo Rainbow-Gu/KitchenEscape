@@ -8,10 +8,6 @@ public class Item {
      */
     String name;
     public static ArrayList<Item> collection = new ArrayList<Item>();
-    
-    static {
-        collection = new ArrayList<>();
-    }
 
     // North Wall
     static Item egg = new Item("egg");
