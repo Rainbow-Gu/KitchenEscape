@@ -96,7 +96,7 @@ public class Game extends Item{
                 System.out.println("1. Make Noodle\n2. Bake Cake");
                 break;
             case "READ CAKE RECIPE":
-                System.out.println("To make a cake you need: flour, an egg, and a baking pan in the oven.");
+                System.out.println("To make a birthday cake you need: flour, an egg, and a baking pan in the oven, as well as a lit candle");
                 break;
             case "READ POSTER":
                 System.out.println("[🍜 ～ 🎂 ～ 💡]");
@@ -268,7 +268,6 @@ public class Game extends Item{
                 break;
             case "PUT NOODLE IN BOWL":
                 bowl.addFood(noodle);
-                System.out.println("Cooked noodle is in bowl, ready to eat.");
                 break;
             case "TAKE FORK":
                 if (walls.wallContents.get(currentDirection).contains(fork)) {
@@ -338,13 +337,6 @@ public class Game extends Item{
                     System.out.println("You can’t take the cake from here.");
                 }
                 break;
-            // case "LIGHT CANDLE":
-            //     if (walls.wallContents.get(currentDirection).contains(stove)) {
-            //         candle.lightCandle();
-            //     } else {
-            //         System.out.println("You can’t light the candle from here.");
-            //     }
-            //     break;
             case "PUT CANDLE ON CAKE":
                 cake.burnt();
                 break;
@@ -377,7 +369,6 @@ public class Game extends Item{
                 System.out.println("|            'bake' -> Bake cake           |");
                 System.out.println("|             'eat' -> Eat cooked food     |");
                 System.out.println("|            'read' -> Read sth.           |");
-                System.out.println("|           'light' -> light sth.          |");
                 System.out.println("|================= Helpers ================|");
                 System.out.println("|'check collection' -> see what you have   |");
                 System.out.println("|      'pot status' -> pot have water?     |");
@@ -416,7 +407,6 @@ public class Game extends Item{
             System.out.println("|            'bake' -> Bake cake           |");
             System.out.println("|             'eat' -> Eat cooked food     |");
             System.out.println("|            'read' -> Read sth.           |");
-            System.out.println("|           'light' -> light sth.          |");
             System.out.println("|================= Helpers ================|");
             System.out.println("|'check collection' -> see what you have   |");
             System.out.println("|      'pot status' -> pot have water?     |");

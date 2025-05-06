@@ -17,7 +17,7 @@ public class Utility extends Item {
     // put food in utility
     public void addFood (Item food) {
         if(collection.contains(this) || stove.items.contains(this) || oven.items.contains(this)) {
-            if(collection.contains(food)) {
+            if(collection.contains(food)|| pot.containItems.contains(food)) {
                 containItems.add(food);
                 collection.remove(food);
                 System.out.println(food.getName() + " is added to " + this.getName());
