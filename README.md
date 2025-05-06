@@ -9,7 +9,7 @@ Written by ***Rainbow Gu (Smith '26), Michelle Xu (Smith '27)***
  - Your final codebase
  - Your revised annotated architecture diagram
  - Design justification (including a brief discussion of at least one alternative you considered)
- - A map of your game's layout (if applicable)
+ - A map of your game's layout **See KitchenLayout, northwestView, southeastView**
  - `cheatsheet.md`
  - Completed `rubric.md`
   
