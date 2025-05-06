@@ -17,6 +17,5 @@ public class Door extends Item {
             System.out.println("No! The password is incorrect.");
             return false;
         }
-        
     }
 }

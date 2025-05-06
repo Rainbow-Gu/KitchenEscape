@@ -22,11 +22,10 @@ public class Utility extends Item {
                 collection.remove(food);
                 System.out.println(food.getName() + " is added to " + this.getName());
             } else {
-                System.out.println("You can't do this.");
+                System.out.println("You do not yet have " + food.getName());
             }
         } else {
             System.out.println("You need something to put food in.");
         }
     }
-
 }

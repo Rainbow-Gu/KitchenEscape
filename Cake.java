@@ -20,5 +20,4 @@ public class Cake extends Item {
             System.out.println("Action inapplicable.");
         }
     }
-
 }

@@ -30,7 +30,7 @@ public class Stove extends Switch {
                 if (noodle.isCooked()){
                     System.out.println("Noodle is already cooked.");
                 } else {
-                    System.out.println("Stove is on. Cooking...");
+                    System.out.println("Cooking...");
                     noodle.setCooked();
                     System.out.println("Noodle is cooked!");
                 }

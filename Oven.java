@@ -52,7 +52,7 @@ public class Oven extends Switch {
         if(this.checkPan()) {
             if(!opened) {
                 if (this.checkSwitch()) {
-                    System.out.println("Oven is on. Baking...");
+                    System.out.println("Baking...");
                     pan.containItems.add(cake);
                     System.out.println("You made a cake!");
                 } else {

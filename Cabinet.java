@@ -37,6 +37,5 @@ public class Cabinet extends Containment {
             return false;
         }
     }
-    
 }
 

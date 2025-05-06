@@ -26,5 +26,4 @@ public class Switch extends Item{
     public boolean checkSwitch() {
         return onOff;
     }
-
 }

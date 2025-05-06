@@ -32,5 +32,4 @@ public class Noodle extends Item {
             System.out.println("Noodle is not ready.");
         }
     }
-
 }

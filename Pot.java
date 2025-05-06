@@ -13,6 +13,4 @@ public class Pot extends Utility {
     public boolean isFilled() {
         return waterFill;
     }
-    
-    
 }
