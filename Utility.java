@@ -17,8 +17,8 @@ public class Utility extends Item {
     }
 
     /**
-     * puts food in utility
-     * @param food food to be put
+     * Puts food in utility
+     * @param food food to be put in utility
      */
     public void addFood (Item food) {
         if(collection.contains(this) || stove.items.contains(this) || oven.items.contains(this)) {

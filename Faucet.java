@@ -8,7 +8,7 @@ public class Faucet extends Switch{
     }
 
     /**
-     * fill the pot if pot is in the collection and faucet is turned on
+     * Fill the pot if pot is in the collection and faucet is turned on
      */
     public void fillPot(){
         if(collection.contains(pot) && this.onOff == true) {

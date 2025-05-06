@@ -16,7 +16,7 @@ public class Walls extends Item {
     }
 
     /**
-     * initializes the 4 walls
+     * Initializes the 4 walls
      */
     public static void setupWalls() {
         wallContents = new HashMap<>();
@@ -29,7 +29,7 @@ public class Walls extends Item {
     }
 
     /**
-     * shows what the player should see when facing certain direction and shows one digit of the password conditionally
+     * Shows what the player should see when facing certain direction and shows one digit of the password conditionally
      * @param direction which wall the player is facing
      */
     public void showWallContents(String direction) {

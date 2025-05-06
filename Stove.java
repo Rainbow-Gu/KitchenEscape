@@ -17,7 +17,7 @@ public class Stove extends Switch {
     }
 
     /**
-     * checks if pot is on the stove and there is noodle in the pot
+     * Checks if pot is on the stove and there is noodle in the pot
      * @return true if pot is ready
      */
     public boolean checkPot () {
@@ -31,7 +31,7 @@ public class Stove extends Switch {
     }
 
     /**
-     * adds item (pot) to stove
+     * Adds item (pot) to stove
      * @param i pot
      */
     public void addItemStove (Item i) {
@@ -39,7 +39,7 @@ public class Stove extends Switch {
     }
 
     /**
-     * cooks noodle when the pot is ready and the stove is on
+     * Cooks noodle when the pot is ready and the stove is on
      */
     public void cook () {
         if(this.checkPot()) {
@@ -60,7 +60,7 @@ public class Stove extends Switch {
     }
 
     /**
-     * adds cooked noodle to bowl
+     * Adds cooked noodle to bowl
      * @param bowl bowl
      * @param noodle cooked noodle
      * @return true if action is accomplished

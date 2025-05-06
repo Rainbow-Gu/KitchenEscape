@@ -8,7 +8,7 @@ public class Cake extends Item {
     }
 
     /**
-     * checks if candle is lit and the player has made a cake
+     * Checks if candle is lit and the player has made a cake
      * @return true if conditions are met
      */
     public boolean burnCondition() {
@@ -20,7 +20,7 @@ public class Cake extends Item {
     }
 
     /**
-     * shows one digit of the password
+     * Shows one digit of the password
      */
     public void burnt() {
         if(burnCondition()){

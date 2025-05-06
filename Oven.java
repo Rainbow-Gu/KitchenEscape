@@ -18,7 +18,7 @@ public class Oven extends Switch {
     }
 
     /**
-     * opens oven
+     * Opens oven
      * @return true if oven is open
      */
     public boolean open () {
@@ -28,7 +28,7 @@ public class Oven extends Switch {
     }
     
     /**
-     * closes oven
+     * Closes oven
      * @return false if oven is close
      */
     public boolean close () {
@@ -38,7 +38,7 @@ public class Oven extends Switch {
     }
 
     /**
-     * puts item (cake) into oven
+     * Puts item (cake) into oven
      * @param i item to be put into oven
      */
     public void addItemOven (Item i) {
@@ -52,7 +52,7 @@ public class Oven extends Switch {
     }
 
     /**
-     * checks if pan is in the oven
+     * Checks if pan is in the oven
      * @return true if pan is in the oven
      */
     public boolean checkPan () {
@@ -68,7 +68,7 @@ public class Oven extends Switch {
     }
     
     /**
-     * bakes cake
+     * Bakes cake
      */
     public void cook() {
         if(this.checkPan()) {
@@ -89,7 +89,7 @@ public class Oven extends Switch {
     }
 
     /**
-     * takes cake and adds to the collection
+     * Takes cake and adds to the collection
      * @param i cake
      */
     public void take(Item i) {

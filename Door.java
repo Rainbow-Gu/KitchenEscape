@@ -13,16 +13,14 @@ public class Door extends Item {
     }
 
     /**
-     * checks if the password is correct and opens the door
+     * Checks if the password is correct and opens the door
      * @param password the 3 digits input by the player
      * @return true if the password is correct
      */
     public boolean open(int password) {
-        if (password == 123) {
-            System.out.println("Hooray! You have successfully complete the game!");
+        if (password == 213) {
             return true;
         } else {
-            System.out.println("No! The password is incorrect.");
             return false;
         }
     }

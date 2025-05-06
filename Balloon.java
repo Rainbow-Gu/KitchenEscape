@@ -13,7 +13,7 @@ public class Balloon extends Item{
     }
     
     /**
-     * pops the balloon to get the key
+     * Pops the balloon to get the key
      */
     public void pop () {
 
@@ -26,7 +26,7 @@ public class Balloon extends Item{
     }
 
     /**
-     * check if the balloon is popped
+     * Check if the balloon is popped
      * @return true if the balloon is popped
      */
     public boolean isPopped() {

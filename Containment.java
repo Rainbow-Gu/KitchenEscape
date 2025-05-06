@@ -21,7 +21,7 @@ public class Containment extends Item {
     }
 
     /**
-     * overloaded constructor for containment with two items
+     * Overloaded constructor for containment with two items
      * @param name the name of the containment
      * @param i1 one item
      * @param i2 another item
@@ -35,7 +35,7 @@ public class Containment extends Item {
     }
     
     /**
-     * opens the containment and shows what it contains
+     * Opens the containment and shows what it contains
      * @return true if the containment is open
      */
     public boolean open() {
@@ -62,7 +62,7 @@ public class Containment extends Item {
     }
     
     /**
-     * takes an item from the containment and adds to the collection
+     * Takes an item from the containment and adds to the collection
      * @param i item to take
      */
     public void take(Item i) {
@@ -79,7 +79,7 @@ public class Containment extends Item {
     }
 
     /**
-     * 
+     * Close the containment
      * @return false if the containment is close
      */
     public boolean close() {

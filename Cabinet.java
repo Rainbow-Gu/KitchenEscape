@@ -17,7 +17,7 @@ public class Cabinet extends Containment {
     }
 
     /**
-     * checks if the player has gotten the key, opens the cabinet, and shows what it contains
+     * Checks if the player has gotten the key, opens the cabinet, and shows what it contains
      * @return true if cabinet is open
      */
     public boolean open() {

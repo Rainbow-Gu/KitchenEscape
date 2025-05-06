@@ -14,7 +14,7 @@ public class Noodle extends Item {
     }
 
     /**
-     * checks if noodle is cooked
+     * Checks if noodle is cooked
      * @return true if noodle is cooked
      */
     public boolean isCooked() {
@@ -22,17 +22,16 @@ public class Noodle extends Item {
     }
 
     /**
-     * sets the status of noodle to being cooked
+     * Sets the status of noodle to being cooked
      */
     public void setCooked() {
         cooked = true;
     }
 
     /**
-     * checks if noodle is ready to eat
+     * Checks if noodle is ready to eat
      * @return true if noodle is ready to eat
      */
-    // QUESTION - make it a string? these can also happen in game
     public boolean eatCondition() {
         if (collection.contains(bowl) && bowl.containItems.contains(noodle)) {
             if (stove.addToBowl(bowl, noodle) && collection.contains(fork)) {
@@ -42,7 +41,7 @@ public class Noodle extends Item {
     }
     
     /**
-     * shows one digit of the password
+     * Shows one digit of the password
      */
     public void eat() {
         if(eatCondition()){

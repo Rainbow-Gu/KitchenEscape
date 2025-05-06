@@ -49,7 +49,7 @@ public class Item {
     }
 
     /**
-     * accessor for item's name
+     * Accessor for item's name
      * @return item's name
      */
     public String getName(){
@@ -57,7 +57,7 @@ public class Item {
     }
 
     /**
-     * adds an item to the collection when it is collected
+     * Adds an item to the collection when it is collected
      * @param i the item to add
      */
     public static void addItem(Item i) {
@@ -77,7 +77,7 @@ public class Item {
     }
 
     /**
-     * removes an item from the collection when it is used
+     * Removes an item from the collection when it is used
      * @param i the item to remove
      */
     public static void removeItem(Item i) {
@@ -85,7 +85,7 @@ public class Item {
     }
     
     /**
-     * prints the list of items in the collection when the player wants to check collection
+     * Prints the list of items in the collection when the player wants to check collection
      */
     public static void printInventory() {
         if (collection.isEmpty()){

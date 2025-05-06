@@ -16,15 +16,15 @@ public class Switch extends Item{
     }
 
     /**
-     * accessor for name
+     * Accessor for name
      */
     public String getName() {
         return name;
     }
 
     /**
-     * turns on
-     * @return true if it is on
+     * Turns on Switch
+     * @return true to turn on the switch
      */
     public boolean turnOn() {
         onOff = true;
@@ -32,8 +32,8 @@ public class Switch extends Item{
     }
 
     /**
-     * turns off
-     * @return false if it is off
+     * Turns off Switch
+     * @return false to turn off the switch
      */
     public boolean turnOff() {
         onOff = false;

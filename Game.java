@@ -8,6 +8,7 @@ public class Game extends Item{
     private static String currentDirection = "face north"; // default starting direction
     private Walls walls;
     static boolean lightOn = true; // true if light is on; default being on
+    private Scanner scanner = new Scanner(System.in);
 
     /**
      * Constructor
@@ -18,10 +19,9 @@ public class Game extends Item{
     }
 
     /**
-     * starts game
+     * Starts game and handles when to quit
      */
     public void start() {
-        Scanner scanner = new Scanner(System.in);
         String command;
         System.out.println("It is your birthday, but you are locked in the kitchen...");
         
@@ -31,12 +31,10 @@ public class Game extends Item{
             System.out.print("> ");
             command = scanner.nextLine().trim().toUpperCase();
 
-            // Handle quit
             if (command.equals("QUIT") || command.equals("EXIT")) {
                 System.out.println("Thanks for playing!");
                 break;
             }
-            // Pass command to handler
             handleCommand(command);
         }
 
@@ -44,7 +42,7 @@ public class Game extends Item{
     }
 
     /**
-     * deals with all possible inputs and calls corresponding methods
+     * Deals with all possible inputs and calls corresponding methods
      * @param command player input
      */
     private void handleCommand(String command) {
@@ -122,7 +120,7 @@ public class Game extends Item{
             case "TURN ON LIGHT":
                 lightOn = true;
                 System.out.println("The light is on.");
-                walls.showWallContents(currentDirection); // re-show what's in front
+                walls.showWallContents(currentDirection);
                 break;
             case "TAKE POT":
                 if (walls.wallContents.get(currentDirection).contains(pot)) {
@@ -149,6 +147,7 @@ public class Game extends Item{
                 break;
             case "OPEN DRAWER":
                 System.out.println("The drawer has 2 drawers.");
+                break;
             case "OPEN DRAWER 1":
                 if (walls.wallContents.get(currentDirection).contains(drawer1)) {
                     drawer1.open();
@@ -352,12 +351,18 @@ public class Game extends Item{
                 cake.burnt();
                 break;
             case "OPEN DOOR":
-                System.out.println("The door is locked. Please type a 3-digit password:");
-                // Then handle input like scanner.nextLine() again
-                break;
-            case "123":
-                System.out.println("Congratulations, you WIN!");
-                System.exit(0);
+                System.out.print("Enter the 3-digit password: ");
+                try {
+                    int passwordInput = Integer.parseInt(scanner.nextLine().trim());
+                    if (door.open(passwordInput)) {
+                        System.out.println("The door creaks open. Happy Birthday! 🎉 You escaped!");
+                        System.exit(0); // Exit game
+                    } else {
+                        System.out.println("Wrong password. The door remains locked.");
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input. Please enter a number.");
+                }
                 break;
             case "CHECK COLLECTION":
                 System.out.println("You have:");
@@ -392,12 +397,15 @@ public class Game extends Item{
         }
     }
 
-
+    /**
+     * Main method to start the game
+     * @param args command line arguments
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
         Walls.setupWalls();
-        // Game intro
+
         System.out.println("Welcome to Birthday Escape Game! Enter “START” to start the Game!");
 
         String input = scanner.nextLine().trim().toUpperCase();
@@ -428,10 +436,9 @@ public class Game extends Item{
             System.out.println("            |   [Game Starts]   |");
             System.out.println("            V   [Game Starts]   V");
             System.out.println("                                            ");
-    
-            // Initialize game state...
-            Game game = new Game();  // Your Game class holds objects, room layout, etc.
-            game.start();            // Start game logic in a method
+
+            Game game = new Game(); 
+            game.start();     
     
             scanner.close();
 

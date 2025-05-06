@@ -1,0 +1,3 @@
+One alternative we had considered is to have every current Item class objects to be a string, and to have many of the functions happening in main under each case of the switch. However, we stilled designed it the current way because we think it makes more sense intuitively thinking of each item not as a string. It also would be clearer for future editers as well as us to go through each individual class to fix codes instead of searching through an extra long file. 
+
+We had also thought of making the door to be opened by key. But we think having it by password and having the user find all three digits would make the game more in-depth and fun to spent time on (basically not too easy).

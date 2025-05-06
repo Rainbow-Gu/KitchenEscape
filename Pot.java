@@ -13,14 +13,14 @@ public class Pot extends Utility {
     }
 
     /**
-     * fills the pot
+     * Fills the pot
      */
     public void fillWater() {
         waterFill = true;
     }
 
     /**
-     * check if pot is filled with water
+     * Check if pot is filled with water
      * @return true if pot is filled
      */
     public boolean isFilled() {

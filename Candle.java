@@ -9,7 +9,7 @@ public class Candle extends Switch {
     }
 
     /**
-     * 
+     * Lights the candle if conditions are met
      * @return true if the candle is lit
      */
     public boolean lightCandle () {
@@ -25,7 +25,7 @@ public class Candle extends Switch {
     }
 
     /**
-     * lights the candle
+     * Getter for whether the candle is lit
      * @return true if candle is lit
      */
     public boolean lit() {
